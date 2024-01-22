@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
-for i in range(10):
-    for j in range(10):
-        print(f"{i}{j}", end="\n" if i == 9 and j == 9 else ", ")
+for num in range(100):
+    print("{:2}".format(num), end=", " if num != 99 else "\n")
+    
