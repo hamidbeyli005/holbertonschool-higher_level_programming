@@ -3,7 +3,5 @@
 def delete_at(my_list=[], idx=0):
     if idx == 0:
         return my_list
-    new_list = my_list[:idx] + my_list[idx + 1:]
-    my_list.clear()
-    my_list.extend(new_list)
+    del my_list[idx]
     return my_list
