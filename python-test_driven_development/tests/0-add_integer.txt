@@ -1,7 +1,4 @@
 
-The ``add_integer`` module
-
-
 	Adds two integers.
 
 	Prototype: def add_integer(a, b=98):
