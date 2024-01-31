@@ -89,9 +89,9 @@ Test float overflow:
     ...
     OverflowError: cannot convert float infinity to integer
 
-Test both args invalid:
+Add nan:
 
-    >>> add_integer(None, None)
+    >>> add_integer(0, float('nan'))
     Traceback (most recent call last):
-        ...
-    TypeError: a must be an integer
+    ...
+    ValueError: cannot convert float NaN to integer
