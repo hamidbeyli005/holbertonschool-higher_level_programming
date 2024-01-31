@@ -1,7 +1,8 @@
+#!/usr/bin/python3
 def add_integer(a, b=98):
 
     """Adds two integers.
-    
+
     Args:
         a (int or float): The first number.
         b (int or float): The second number (default is 98).
@@ -19,4 +20,3 @@ def add_integer(a, b=98):
     b = int(b)
 
     return a + b
-
