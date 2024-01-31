@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+"""
+Module to sum
+add_integer: adds two integers and return
+"""
+
+
 def add_integer(a, b=98):
 
     """Adds two integers.
