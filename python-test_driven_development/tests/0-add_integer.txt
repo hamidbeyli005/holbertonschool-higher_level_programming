@@ -30,18 +30,18 @@ The ``add_integer`` module
 >>> add_integer(7, "test")
 Traceback (most recent call last):
   File "./0-main.py", line 16, in <module>
-    add_integer(5,'5')
+    add_integer(7,'test')
   File "/root/holbertonschool-higher_level_programming/python-test_driven_development/0-add_integer.py", line 16, in add_integer
     raise TypeError("a must be an integer or b must be an integer")
-TypeError: a must be an integer or b must be an integer
+TypeError: b must be an integer
 
 >>> add_integer("5", 1)
 Traceback (most recent call last):
   File "./0-main.py", line 16, in <module>
-    add_integer("5",5)
+    add_integer("5",1)
   File "/root/holbertonschool-higher_level_programming/python-test_driven_development/0-add_integer.py", line 16, in add_integer
     raise TypeError("a must be an integer or b must be an integer")
-TypeError: a must be an integer or b must be an integer
+TypeError: a must be an integer
 
 >>> add_integer("test", "test")
 Traceback (most recent call last):
@@ -49,4 +49,4 @@ Traceback (most recent call last):
     add_integer(5,'5')
   File "/root/holbertonschool-higher_level_programming/python-test_driven_development/0-add_integer.py", line 16, in add_integer
     raise TypeError("a must be an integer or b must be an integer")
-TypeError: a must be an integer or b must be an integer
+TypeError: a must be an integer
