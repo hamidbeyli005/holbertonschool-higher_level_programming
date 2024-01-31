@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-"""This module contains a function that returns
-    the addition of two integers.
+"""This module adds two integers.
+
+>>> add_integer(4, 5)
+9
 """
 
 
