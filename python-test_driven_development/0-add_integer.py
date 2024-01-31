@@ -1,23 +1,20 @@
 #!/usr/bin/python3
-"""
-Module to sum
-add_integer: adds two integers and return
-
+"""This module contains a function that returns
+    the addition of two integers.
 """
 
 
 def add_integer(a, b=98):
-
     """Adds two integers.
-    Args: a = int/float b = int/float
+    Args:
+        a: the first int
+        b: the second int, default 98.
     """
 
-    if isinstance(a, (int, float)) is False:
+    if type(a) not in (int, float):
         raise TypeError('a must be an integer')
-    if isinstance(b, (int, float)) is False:
+
+    if type(b) not in (int, float):
         raise TypeError('b must be an integer')
 
-    a = int(a)
-    b = int(b)
-
-    return a + b
+    return int(a) + int(b)
