@@ -1,3 +1,7 @@
 #!/usr/bin/python3
+""" Define a class Square"""
+
+
 class Square:
-    pass    # This is a placeholder class for a square shape
+    """This class represents a square."""
+    pass
