@@ -2,7 +2,7 @@
 """
 square_printer_module
 
-This module provides a function for printing a square pattern of '#' characters.
+This module provides a function for printing a square pattern of '#' characters
 
 """
 
