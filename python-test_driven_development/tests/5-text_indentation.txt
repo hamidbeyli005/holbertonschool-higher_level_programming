@@ -17,6 +17,7 @@ Import function from module:
 	
 	>>> text_indentation("Lorem ipsum dolor sit amet.")
 	Lorem ipsum dolor sit amet.	
+	<BLANKLINE>
 
 	>>> text_indentation()
 	Traceback (most recent call last):
