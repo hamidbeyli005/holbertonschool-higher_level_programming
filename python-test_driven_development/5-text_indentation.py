@@ -9,7 +9,7 @@ Description:
     Formats input text by printing two new lines after each '.', '?', or ':'.
 
 Usage Example:
-    text_indentation("Lorem ipsum dolor sit amet. Consectetur adipiscing elit.")
+    text_indentation("Lorem ipsum dolor sit amet. Consectetur adipiscing elit")
 """
 
 
