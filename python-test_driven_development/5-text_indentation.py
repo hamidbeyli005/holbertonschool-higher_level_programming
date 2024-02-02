@@ -23,7 +23,7 @@ def text_indentation(text):
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    text = text.strip().replace('. ', '.').replace('? ', '?').replace('; ', ';')
+    text = text.strip().replace('. ', '.').replace('? ', '?').replace(': ', ':')
     line = ''
     for i in text:
         line += i
