@@ -1,11 +1,9 @@
 #!/usr/bin/python3
 def safe_print_integer_err(value):
-    if isinstance(value, str):
+    from sys import stderr
+    try:
+        print("{:d}".format(value))
         return True
-    else:
-        try:
-            print("{:d}".format(value))
-            return True
-        except Exception as ex:
-            print(ex)
-            return False
+    except Exception as ex:
+        print("Exception: {}".format(ex), file=stderr)
+        return False
