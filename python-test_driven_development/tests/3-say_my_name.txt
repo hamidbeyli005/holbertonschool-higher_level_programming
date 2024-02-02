@@ -9,7 +9,7 @@ Import function from module:
 	
 Test two string type:
 	>>> say_my_name("John", "Smith")
-	My name is John Smith$
+	My name is John Smith
 
 Test integer and string type:
 	>>> say_my_name(5, "Smith")
