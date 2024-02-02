@@ -16,7 +16,7 @@ Import function from module:
 	TypeError: text must be a string
 	
 	>>> text_indentation("Lorem ipsum dolor sit amet.")
-	Lorem ipsum dolor sit amet.	
+	Lorem ipsum dolor sit amet.
 	<BLANKLINE>
 
 	>>> text_indentation()
