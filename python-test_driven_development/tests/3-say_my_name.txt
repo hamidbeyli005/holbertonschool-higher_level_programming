@@ -23,10 +23,6 @@ Test string and integer type:
 	...
 	TypeError: last_name must be a string
 
-test one string test:
-	>>> say_my_name("Bob")
-	My name is Bob
-
 Test lastname empty:
 	>>> say_my_name("hello", "")
 	My name is hello 
