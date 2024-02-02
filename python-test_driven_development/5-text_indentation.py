@@ -23,13 +23,4 @@ def text_indentation(text):
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    text = text.strip().replace('. ', '.').replace('? ', '?').replace(': ', ':')
-    line = ''
-    for i in text:
-        line += i
-        if i == ':' or i == '?' or i == '.':
-            print(repr(line.strip()))
-            line = ''
-
-    if line:
-        print(repr(line.strip()))
+    print(text.replace(". ", ".\n\n").replace("? ", "?\n\n").replace(": ", ":\n\n"))
