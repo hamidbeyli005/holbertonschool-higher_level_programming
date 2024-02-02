@@ -28,9 +28,8 @@ def text_indentation(text):
     for i in text:
         line += i
         if i == ':' or i == '?' or i == '.':
-            print(line.strip())
-            """print()"""
+            print(repr(line.strip()))
             line = ''
 
     if line:
-        print(line.strip())
+        print(repr(line.strip()))
