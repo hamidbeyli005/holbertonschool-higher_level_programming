@@ -1,0 +1,16 @@
+The ``100-matrix_mul`` module
+============================
+
+Using ``matrix_mul``
+---------------------
+
+Import function from module:
+	>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+# Test Case 1
+	>>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+	[[7, 10], [15, 22]]
+
+# Test Case 2
+	>>> matrix_mul([[1, 2]], [[3, 4], [5, 6]])
+	[[13, 16]]
