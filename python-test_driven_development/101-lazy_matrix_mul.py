@@ -1,8 +1,6 @@
 #!/usr/bin/python3
-"""
-lazy matrix multiplication using a module
-more experience with unit testing
-"""
+"""Defines a matrix multiplication function using NumPy."""
+
 
 import numpy as np
 
@@ -15,4 +13,8 @@ def lazy_matrix_mul(m_a, m_b):
         m_b (list of lists of ints/floats): The second matrix.
     """
 
-    return (np.matmul(m_a, m_b))
+    try:
+        result = np.matmul(m_a, m_b)
+        return result
+    except Exception as e:
+        return str(e)
