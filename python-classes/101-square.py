@@ -68,12 +68,10 @@ class Square:
     def __str__(self):
         """Return Square"""
         result = ""
-        if self.__size == 0:
-            result += "\n"
-        else:
+        if self.__size > 0:
             for _ in range(self.__position[1]):
                 result += "\n"
             for _ in range(self.__size - 1):
-                result += (" " * self.__position[0] + "#" * self.__size + "\n")
-        result += " " * self.__position[0] + "#" * self.__size
+                result += " " * self.__position[0] + "#" * self.__size + "\n"
+            result += " " * self.__position[0] + "#" * self.__size
         return result
