@@ -1,10 +1,24 @@
 #!/usr/bin/python3
+"""
+lazy matrix multiplication using a module
+more experience with unit testing
+"""
 
 
 import numpy as np
 
 
 def lazy_matrix_mul(m_a, m_b):
+    """
+    Multiplies two matrices using NumPy.
+
+    Args:
+        m_a (list of lists): The first matrix.
+        m_b (list of lists): The second matrix.
+
+    Returns:
+        list of lists: The result of the matrix multiplication.
+    """
     if not isinstance(m_a, list):
         raise TypeError("m_a must be a list")
     if not isinstance(m_b, list):
@@ -20,9 +34,9 @@ def lazy_matrix_mul(m_a, m_b):
     if not m_b or any(not row for row in m_b):
         raise ValueError("m_b can't be empty")
 
-    if any(not isinstance(element, (int, float)) for row in m_a for element in row):
+    if any(not isinstance(elem, (int, float)) for row in m_a for elem in row):
         raise TypeError("m_a should contain only integers or floats")
-    if any(not isinstance(element, (int, float)) for row in m_b for element in row):
+    if any(not isinstance(elem, (int, float)) for row in m_b for elem in row):
         raise TypeError("m_b should contain only integers or floats")
 
     if any(len(row) != len(m_a[0]) for row in m_a[1:]):
@@ -35,4 +49,3 @@ def lazy_matrix_mul(m_a, m_b):
 
     result = np.matmul(m_a, m_b)
     return result.tolist()
-
