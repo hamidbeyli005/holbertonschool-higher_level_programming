@@ -13,12 +13,6 @@ def lazy_matrix_mul(m_a, m_b):
     Args:
         m_a: the first matrix
         m_b: the other matrix
-    Returns:
-        matrix: product
-    Raises:
-        TypeError: if m_a or m_b are not lists or not lists of lists
-        ValueError: if m_a or m_b are empty or can't be multiplied
-        TypeError: if m_a or m_b have non int/float or are not rect
     """
     m_a_notempty = True
     m_b_notempty = True
