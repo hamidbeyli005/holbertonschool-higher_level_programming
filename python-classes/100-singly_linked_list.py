@@ -1,6 +1,18 @@
 #!/usr/bin/python3
 class Node:
+    """
+    Node class represents a node in a singly linked list.
+
+    Attributes:
+        __data (int): The data stored in the node.
+        __next_node (Node): The reference to the next node in the list.
+    """
     def __init__(self, data, next_node=None):
+        """Initializes the data.
+        Args:
+            data (int): data to store
+            next_node (Node object): reference to next_node
+        """
         if not isinstance(data, int):
             raise TypeError("data must be an integer")
         self.__data = data
@@ -30,10 +42,12 @@ class Node:
 
 
 class SinglyLinkedList:
+    """Defines a singly linked list"""
     def __init__(self):
         self.__head = None
 
     def sorted_insert(self, value):
+        """Inserts a new Node into the correct sorted position in the list"""
         new_node = Node(value)
         if self.__head is None or value < self.__head.data:
             new_node.next_node = self.__head
