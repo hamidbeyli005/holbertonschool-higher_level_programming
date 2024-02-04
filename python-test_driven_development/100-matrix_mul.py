@@ -7,6 +7,16 @@ The function matrix_mul performs matrix multiplication on two matrices.
 
 
 def matrix_mul(m_a, m_b):
+    """
+    Multiply two matrices.
+
+    Args:
+        m_a (list of lists): The first matrix.
+        m_b (list of lists): The second matrix.
+
+    Returns:
+        list of lists: The result of the matrix multiplication.
+    """
     if not isinstance(m_a, list):
         raise TypeError("m_a must be a list")
     if not isinstance(m_b, list):
