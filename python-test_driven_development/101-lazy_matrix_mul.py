@@ -10,8 +10,4 @@ def lazy_matrix_mul(m_a, m_b):
     """
     returns the product of m_a and m_b
     """
-    try:
-        result = np.matmul(m_a, m_b)
-    except ValueError as e:
-        raise ValueError("Scalar operands are not allowed, use '*' instead")
-    return result
+    return (np.matmul(m_a, m_b))
