@@ -17,4 +17,4 @@ def lazy_matrix_mul(m_a, m_b):
         result = np.matmul(m_a, m_b)
         return result
     except Exception as e:
-        return str(e)
+        return e
