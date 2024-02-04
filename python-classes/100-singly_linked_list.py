@@ -22,6 +22,7 @@ class Node:
 
     @property
     def data(self):
+        """getter __data private instance attribute"""
         return self.__data
 
     @data.setter
@@ -32,6 +33,7 @@ class Node:
 
     @property
     def next_node(self):
+        """getter __position private instance attribute"""
         return self.__next_node
 
     @next_node.setter
