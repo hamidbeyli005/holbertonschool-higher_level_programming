@@ -1,4 +1,11 @@
 #!/usr/bin/python3
+"""
+This module provides a function for matrix multiplication.
+
+The function matrix_mul performs matrix multiplication on two matrices.
+"""
+
+
 def matrix_mul(m_a, m_b):
     if not isinstance(m_a, list):
         raise TypeError("m_a must be a list")
