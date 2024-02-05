@@ -26,3 +26,25 @@ Test case 4:
 	>>> obj = MyList([9, 8, 7])
 	>>> obj.print_sorted()
 	[7, 8, 9]
+
+Test case 5:
+	>>> obj = MyList([-9, -12, 1])
+	>>> obj.print_sorted()
+	[-12, -9, 1]
+
+Test case 6:
+        >>> obj = MyList([-9, -12, 1])
+        >>> obj.print_sorted()
+        [-12, -9, 1]
+	>>> obj
+	[-12, -9, 1]
+
+Test case 7:
+        >>> obj = MyList([-9, -12, 1])
+        >>> obj.append(4)
+	>>> obj
+        [-9, -12, 1, 4]
+
+Test case 8:
+	>>> type(MyList.__dict__['print_sorted'])
+	<class 'function'>
