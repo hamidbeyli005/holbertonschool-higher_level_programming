@@ -59,3 +59,33 @@ Test case 9:
 	Traceback (most recent call last):
 	...
 	TypeError: test must be an integer
+
+Test case 10:
+	>>> bg.integer_validator("teststring", {2, 3})
+	Traceback (most recent call last):
+	...
+	TypeError: teststring must be an integer
+
+Test case 11:
+	>>> bg.integer_validator("boolean", True)
+	Traceback (most recent call last):
+	...
+	TypeError: boolean must be an integer
+
+Test case 12:
+        >>> bg.integer_validator("boolean", False)
+        Traceback (most recent call last):
+        ...
+        TypeError: boolean must be an integer
+
+Test case 13:
+	>>> bg.integer_validator("none", None)
+	Traceback (most recent call last):
+	...
+	TypeError: none must be an integer
+
+Test case 13:
+        >>> bg.integer_validator("null", null)
+        Traceback (most recent call last):
+        ...
+        NameError: name 'null' is not defined
