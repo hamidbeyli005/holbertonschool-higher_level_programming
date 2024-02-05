@@ -1,0 +1,28 @@
+``1-my_list``module
+===================
+
+using ``1-my_list``
+-------------------
+
+first, import function from module:
+	>>> MyList = __import__('1-my_list').MyList
+
+Test case 1:
+	>>> obj = MyList()
+	>>> isinstance(obj, list)
+	True
+
+Test case 2:
+	>>> obj = MyList()
+	>>> type(obj) == MyList
+	True
+
+Test case 3:
+	>>> obj = MyList()
+	>>> obj.print_sorted()
+	[]
+
+Test case 4:
+	>>> obj = MyList([9, 8, 7])
+	>>> obj.print_sorted()
+	[7, 8, 9]
