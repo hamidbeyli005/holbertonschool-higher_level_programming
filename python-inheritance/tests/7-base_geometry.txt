@@ -12,6 +12,12 @@ Test case 1:
 	>>> bg.integer_validator("width", 89)
 	
 
+Test case 2:
+	>>> bg.integer_validator("test", [1, 2])
+	Traceback (most recent call last):
+	...
+	TypeError: test must be an integer
+
 Test case 3:
 	>>> bg.integer_validator()
 	Traceback (most recent call last):
@@ -41,3 +47,15 @@ Test case 7:
 	Traceback (most recent call last):
 	...
 	ValueError: null must be greater than 0
+
+Test case 8:
+	>>> bg.integer_validator("negative", -5)
+	Traceback (most recent call last):
+	...
+	ValueError: negative must be greater than 0
+
+Test case 9:
+	>>> bg.integer_validator("test", (2, 3, 5))
+	Traceback (most recent call last):
+	...
+	TypeError: test must be an integer
