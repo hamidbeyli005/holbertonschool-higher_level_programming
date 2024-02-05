@@ -37,7 +37,7 @@ Test case 6:
         >>> obj.print_sorted()
         [-12, -9, 1]
 	>>> obj
-	[-12, -9, 1]
+	[-9, -12, 1]
 
 Test case 7:
         >>> obj = MyList([-9, -12, 1])
