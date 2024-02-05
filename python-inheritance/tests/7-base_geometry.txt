@@ -84,8 +84,22 @@ Test case 13:
 	...
 	TypeError: none must be an integer
 
-Test case 13:
+Test case 14:
         >>> bg.integer_validator("null", null)
         Traceback (most recent call last):
         ...
         NameError: name 'null' is not defined
+
+Test case 15:
+	>>> bg.integer_validator(1, 2, 3)
+	Traceback (most recent call last):
+	...
+	TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+Test case 16:
+	>>> type(bg) == BaseGeometry
+	True
+
+Test case 17:
+	>>> type(BaseGeometry.__dict__['integer_validator'])
+	<class 'function'>
