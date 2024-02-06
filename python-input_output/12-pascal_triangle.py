@@ -7,7 +7,8 @@ def pascal_triangle(n):
     if n <= 0:
         return []
     matrix = []
-    for i in range(5):
+
+    for i in range(n):
         row = str(11 ** i)
         matrix.append(row)
     return matrix
