@@ -17,6 +17,7 @@ class Student:
         else:
             r = {x: getattr(self, x) for x in attrs if hasattr(self, x)}
             return r
+
     def reload_from_json(self, json):
         """Reload from json"""
         for key, value in json.items():
