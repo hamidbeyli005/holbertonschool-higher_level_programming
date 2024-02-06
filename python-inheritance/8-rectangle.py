@@ -1,12 +1,19 @@
 #!/usr/bin/python3
-"""Rectangle module"""
+"""Module 8-rectangle.
+Creates a Rectangle class.
+"""
 
 
 BaseGeometr = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
-    """Rectangle class"""
+    """Represents a rectangle.
+    Private instance attributes:
+        - width
+        - height
+    Inherits from BaseGeometry.
+    """
     def __init__(self, width, height):
         """Rectangle init method"""
         self.integer_validator('width', width)
