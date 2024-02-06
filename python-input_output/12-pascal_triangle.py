@@ -6,8 +6,8 @@ def pascal_triangle(n):
     """pascal function"""
     if n <= 0:
         return []
-    length = n + 1
-    for i in range(n):
-        for j in range(i - length):
-            print(j)
-        print()
+    matrix = []
+    for i in range(5):
+        row = str(11 ** i)
+        matrix.append(row)
+    return matrix
