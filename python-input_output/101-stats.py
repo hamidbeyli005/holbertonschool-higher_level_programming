@@ -1,5 +1,14 @@
 #!/usr/bin/python3
-  
+"""
+Module: 101-stats.py
+
+This module reads log data from stdin and computes statistics.
+
+Input format: <IP Address> - [<date>] "GET /projects/260 HTTP/1.1" <status code> <file size>
+Output format: Prints statistics for every 10 lines and after a KeyboardInterrupt (CTRL + C).
+"""
+
+
 import sys
 
 
