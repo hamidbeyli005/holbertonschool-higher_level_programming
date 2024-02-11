@@ -1,14 +1,16 @@
 #!/usr/bin/python3
+"""parse log module"""
+
+
 import sys
 
-
 def print_status():
-    '''
+    """
     Prints the total file size and the number of each HTTP status code.
 
     Input format: <IP Address> - [<date>] "GET /projects/260 HTTP/1.1" <status code> <file size>
     Output format: Prints the total file size and the number of each HTTP status code every 10 lines.
-    '''
+    """
     counter = 0
     size = 0
     status_codes = {"200": 0, "301": 0, "400": 0, "401": 0, "403": 0, "404": 0, "405": 0, "500": 0}
