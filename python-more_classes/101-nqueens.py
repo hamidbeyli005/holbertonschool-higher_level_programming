@@ -22,7 +22,7 @@ if __name__ == "__main__":
 
     def already_exists(y):
         """check that a queen does not already exist in that y value"""
-        for x in range(n): 
+        for x in range(n):
             if y == a[x][1]:
                 return True
         return False
