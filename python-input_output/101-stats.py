@@ -1,53 +1,42 @@
 #!/usr/bin/python3
-"""
-Module: 101-stats.py
-
-This module reads log data from stdin and computes statistics.
-
-Input format: <IP Address> - [<date>] "GET /projects/260 HTTP/1.1" <status code> <file size>
-Output format: Prints statistics for every 10 lines and after a KeyboardInterrupt (CTRL + C).
-"""
-
-
 import sys
 
 
-def print_log(size, status_codes):
-    print('File size: {}'.format(size))
-    for code in sorted(status_codes.keys()):
-        print('{}: {}'.format(code, status_codes[code]))
+def print_status():
+    '''
+    Prints the total file size and the number of each HTTP status code.
 
-
-def log_parsing():
+    Input format: <IP Address> - [<date>] "GET /projects/260 HTTP/1.1" <status code> <file size>
+    Output format: Prints the total file size and the number of each HTTP status code every 10 lines.
+    '''
+    counter = 0
     size = 0
-    status_codes = {}
-    valid_codes = [200, 301, 400, 401, 403, 404, 405, 500]
-    count = 0
-    try:
-        for line in sys.stdin:
-            if count == 10:
-                print_log(size, status_codes)
-                count = 0
-                size = 0
-                status_codes = {}
-            else:
-                count += 1
+    status_codes = {"200": 0, "301": 0, "400": 0, "401": 0, "403": 0, "404": 0, "405": 0, "500": 0}
 
-            # space split
-            line = line.split()
+    for line in sys.stdin:
+        parts = line.split()
+        try:
+            size += int(parts[-1])
+            code = parts[-2]
+            status_codes[code] += 1
+        except IndexError:
+            pass
+        
+        if counter == 9:
+            print("File size:", size)
+            for code, count in sorted(status_codes.items()):
+                if count:
+                    print(f"{code}: {count}")
+            counter = 0
+        counter += 1
 
-            size += int(line[-1])
+    if counter < 9:
+        print("File size:", size)
+        for status_code, count in sorted(status_codes.items()):
+            if count:
+                print(f"{status_code}: {count}")
 
-            if int(line[-2]) in valid_codes:
-                if status_codes.get(line[-2], -1) == -1:
-                    status_codes[line[-2]] = 1
-                else:
-                    status_codes[line[-2]] += 1
 
-        print_log(size, status_codes)
-
-    except KeyboardInterrupt:
-        print_log(size, status_codes)
-
-log_parsing()
+if __name__ == "__main__":
+    print_status()
 
