@@ -73,8 +73,7 @@ class Rectangle(Base):
         self.validate_integer('y', value)
         self.__y = value
 
-    @staticmethod
-    def validate_integer(name, value, equal=True):
+    def validate_integer(self, name, value, equal=True):
         """Validate an integer value.
 
         Args:
