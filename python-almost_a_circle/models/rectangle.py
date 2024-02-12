@@ -124,3 +124,8 @@ class Rectangle(Base):
         else:
             for key, value in kvargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        """Dictionary method"""
+        return {'x': self.x, 'y': self.y,
+                'id': self.id, 'height': self.height, 'width': self.width}
