@@ -15,42 +15,76 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """int: Width of the rectangle."""
         return self.__width
 
     @width.setter
     def width(self, value):
+        """Set the width of the rectangle.
+
+        Args:
+            value (int): The width value to set.
+        """
         self.validate_integer('width', value, False)
         self.__width = value
 
     @property
     def height(self):
+        """int: Height of the rectangle."""
         return self.__height
 
     @height.setter
     def height(self, value):
+        """Set the height of the rectangle.
+
+        Args:
+            value (int): The height value to set.
+        """
         self.validate_integer('height', value, False)
         self.__height = value
 
     @property
     def x(self):
+        """int: X-coordinate of the rectangle."""
         return self.__x
 
     @x.setter
     def x(self, value):
+        """Set the x-coordinate of the rectangle.
+
+        Args:
+            value (int): The x-coordinate value to set.
+        """
         self.validate_integer('x', value)
         self.__x = value
 
     @property
     def y(self):
+        """int: Y-coordinate of the rectangle."""
         return self.__y
 
     @y.setter
     def y(self, value):
+        """Set the y-coordinate of the rectangle.
+
+        Args:
+            value (int): The y-coordinate value to set.
+        """
         self.validate_integer('y', value)
         self.__y = value
 
     @staticmethod
-    def validate_integer(name, value, equal = True):
+    def validate_integer(name, value, equal=True):
+        """Validate an integer value.
+
+        Args:
+            name (str): The name of the value being validated.
+            value (int): The value to validate.
+            equal (bool, optional): Whether the value can be equal
+        Raises:
+            TypeError: If the value is not an integer.
+            ValueError: If the value is less than or equal to zero
+        """
         if not isinstance(value, int):
             raise TypeError('{} must be an integer.'.format(name))
         if equal and value < 0:
@@ -59,18 +93,24 @@ class Rectangle(Base):
             raise ValueError('{} must be >= 0'.format(name))
 
     def area(self):
+        """Calculate the area of the rectangle."""
         return self.__width * self.__height
 
     def display(self):
+        """Display the rectangle."""
         for _ in range(self.__y):
             print()
         for i in range(self.__height):
             print(' ' * self.__x + '#' * self.__width)
 
     def __str__(self):
-        return '[{}] ({}) {}/{} - {}/{}'.format(self.__class__.__name__, self.id, self.__x, self.__y, self.__width, self.__height)
+        """Return a string representation of the rectangle."""
+        return '[{}] ({}) {}/{} - {}/{}'.format(
+            self.__class__.__name__, self.id, self.__x, self.__y,
+            self.__width, self.__height)
 
     def update(self, *args, **kvargs):
+        """Update the rectangle's attributes."""
         if args:
             if len(args) > 0:
                 self.id = args[0]
