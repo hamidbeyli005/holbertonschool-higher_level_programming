@@ -85,7 +85,7 @@ class Rectangle(Base):
             ValueError: If the value is less than or equal to zero
         """
         if type(value) is not int:
-            raise TypeError('{} must be an integer.'.format(name))
+            raise TypeError('{} must be an integer'.format(name))
         if equal and value < 0:
             raise ValueError('{} must be >= 0'.format(name))
         elif not equal and value <= 0:
