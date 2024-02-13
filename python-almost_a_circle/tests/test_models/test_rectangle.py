@@ -64,8 +64,8 @@ class TestBase(unittest.TestCase):
             rectangle.display()
             self.assertEqual(fake_out.getvalue(), expected_output)
         
-        rectangle = Rectangle(2, 3)
-        expected_output = "##\n" * 3
+        rectangle = Rectangle(2, 3, 1, 1)
+        expected_output = "\n ##\n ##\n ##\n"
         # Check if the display method provides the correct output when called
         with patch('sys.stdout', new=StringIO()) as fake_out:
             rectangle.display()
