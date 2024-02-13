@@ -12,10 +12,10 @@ class TestBase(unittest.TestCase):
         self.assertEquals(square.size, 1)
 
         square = Square(1, 2, 3)
-        self.assertEquals(square.size, 1)
+        self.assertEquals(square.y, 3)
 
         square = Square(1, 2)
-        self.assertEquals(square.size, 1)
+        self.assertEquals(square.x, 2)
 
     def test_square_string(self):
         with self.assertRaises(TypeError):
