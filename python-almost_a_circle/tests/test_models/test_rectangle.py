@@ -63,10 +63,17 @@ class TestBase(unittest.TestCase):
         with patch('sys.stdout', new=StringIO()) as fake_out:
             rectangle.display()
             self.assertEqual(fake_out.getvalue(), expected_output)
-    
+        
+        rectangle = Rectangle(2, 3)
+        expected_output = "##\n" * 3
+        # Check if the display method provides the correct output when called
+        with patch('sys.stdout', new=StringIO()) as fake_out:
+            rectangle.display()
+            self.assertEqual(fake_out.getvalue(), expected_output)
+
     def test_to_dictionary(self):
         rect = Rectangle(10, 2, 1, 9)
-        self.assertEqual(rect.to_dictionary(), {'x': 1, 'y': 9, 'id': 6, 'height': 2, 'width': 10})
+        self.assertEqual(rect.to_dictionary(), {'x': 1, 'y': 9, 'id': 7, 'height': 2, 'width': 10})
 
     def test_update(self):
         rect = Rectangle(1, 2, 3, 4)
