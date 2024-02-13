@@ -8,23 +8,24 @@ from models.rectangle import Rectangle
 from models.square import Square
 
 class TestBase(unittest.TestCase):
-    def test_id_as_positive(self):
-        b= Base(115)
-        self.assertEqual(b.id, 115)
-        #b = Base(67)
-        #self.assertEqual(b.id, 67)
+    def test_id_positive(self):
+        b = Base(3)
+        self.assertEqual(b.id, 3)
 
-    def test_id_as_negative(self):
-        b = Base(-91)
-        self.assertEqual(b.id, -91)
-        #b = Base(-4)
-        #self.assertEqual(b.id, -4)
+    def test_id_negative(self):
+        b = Base(-3)
+        self.assertEqual(b.id, -3)
 
-    def test_id(self):
-        b = Base()
-        self.assertEqual(b.id, 1)
-        b = Base(None)
-        self.assertEqual(b.id, 2)
+    def test_to_json_string(self):
+        self.assertEqual(Base.to_json_string(None), '[]')
+        self.assertEqual(Base.to_json_string([]), '[]')
+        self.assertEqual(Base.to_json_string([{'id': 12 }]), '[{'id': 12}]')
+
+    def test_from_json_string(self):
+        self.assertEqual(Base.from_json_string(None), [])
+        self.assertEqual(Base.from_json_string('[]'), [])
+        self.assertEqual(Base.from_json_string('[{ "id": 89}]'), [{"id": 89}])
+
 
 
 if __name__ == '__main__':
