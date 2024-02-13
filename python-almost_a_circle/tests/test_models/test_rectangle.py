@@ -7,9 +7,10 @@ from models.rectangle import Rectangle
 
 class TestBase(unittest.TestCase):
     def test_rectangle(self):
-        rect = Rectangle(1, 2)
+        rect = Rectangle(1, 2, 3, 4, 5)
         self.assertEqual(rect.width, 1)
         self.assertEqual(rect.height, 2)
+        self.assertEqual(rect.id, 5)
     
     def test_type_error(self):
         with self.assertRaises(TypeError):
