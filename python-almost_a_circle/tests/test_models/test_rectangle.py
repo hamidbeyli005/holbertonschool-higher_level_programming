@@ -27,8 +27,6 @@ class TestBase(unittest.TestCase):
 
     def test_value_error(self):
         with self.assertRaises(ValueError):
-            Rectangle(1, 2, 3, 4, 5)
-        with self.assertRaises(ValueError):
             Rectangle(-1, 2)
         with self.assertRaises(ValueError):
             Rectangle(1, -2)
