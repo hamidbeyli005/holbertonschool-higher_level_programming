@@ -8,6 +8,7 @@ from io import StringIO
 from unittest.mock import patch
 import os
 
+
 class TestBase(unittest.TestCase):
     def test_rectangle(self):
         rect = Rectangle(1, 2)
@@ -15,7 +16,7 @@ class TestBase(unittest.TestCase):
         self.assertEqual(rect.height, 2)
         rect = Rectangle(1, 2, 3, 4, 5)
         self.assertEqual(rect.id, 5)
-    
+
     def test_type_error(self):
         with self.assertRaises(TypeError):
             Rectangle()
@@ -63,7 +64,7 @@ class TestBase(unittest.TestCase):
         with patch('sys.stdout', new=StringIO()) as fake_out:
             rectangle.display()
             self.assertEqual(fake_out.getvalue(), expected_output)
-        
+
         rectangle = Rectangle(2, 3, 1, 1)
         expected_output = "\n ##\n ##\n ##\n"
         # Check if the display method provides the correct output when called
@@ -72,8 +73,10 @@ class TestBase(unittest.TestCase):
             self.assertEqual(fake_out.getvalue(), expected_output)
 
     def test_to_dictionary(self):
-        rect = Rectangle(10, 2, 1, 9, 7)
-        self.assertEqual(rect.to_dictionary(), {'x': 1, 'y': 9, 'id': 7, 'height': 2, 'width': 10})
+        re = Rectangle(10, 2, 1, 9, 7)
+        self.assertEqual(
+            re.to_dictionary(), {'x': 1, 'y': 9, 'id': 7, 'height': 2, 'width': 10}
+        )
 
     def test_update(self):
         rect = Rectangle(1, 2, 3, 4)
@@ -86,29 +89,36 @@ class TestBase(unittest.TestCase):
         self.assertEqual(str(rect), "[Rectangle] (1) 1/0 - 5/3")
 
     def test_save_to_file(self):
+
         try:
             os.remove("Rectangle.json")
         except:
             pass
+        
         Rectangle.save_to_file(None)
         with open("Rectangle.json", "r") as file:
             self.assertEqual(file.read(), "[]")
         
-        try:
-            os.remove("Rectangle.json")
-        except:
-            pass
-        Rectangle.save_to_file([])
-        with open("Rectangle.json", "r") as file:
-            self.assertEqual(file.read(), "[]")
         
         try:
             os.remove("Rectangle.json")
         except:
             pass
-        Rectangle.save_to_file([Rectangle(1, 2, id=1)])
+        
+        Rectangle.save_to_file([])
         with open("Rectangle.json", "r") as file:
-            self.assertEqual(file.read(), '[{"x": 0, "y": 0, "id": 1, "height": 2, "width": 1}]')
+            self.assertEqual(file.read(), "[]")
+        
+        
+        try:
+            os.remove("Rectangle.json")
+        except:
+            pass
+        
+        Rectangle.save_to_file([Rectangle(1, 2, id=1)])
+        with open("Rectangle.json", "r") as f:
+            self.assertEqual(
+            f.read(), '[{"x": 0, "y": 0, "id": 1, "height": 2, "width": 1}]')
 
     def test_save_to_file(self):
         try:
