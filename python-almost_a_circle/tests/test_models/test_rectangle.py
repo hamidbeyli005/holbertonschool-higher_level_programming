@@ -86,20 +86,35 @@ class TestBase(unittest.TestCase):
         self.assertEqual(str(rect), "[Rectangle] (1) 1/0 - 5/3")
 
     def test_save_to_file(self):
+        try:
+            os.remove("Rectangle.json")
+        except:
+            pass
         Rectangle.save_to_file(None)
         with open("Rectangle.json", "r") as file:
             self.assertEqual(file.read(), '[]')
-
+        
+        try:
+            os.remove("Rectangle.json")
+        except:
+            pass
         Rectangle.save_to_file([])
         with open("Rectangle.json", "r") as file:
             self.assertEqual(file.read(), '[]')
-
+        
+        try:
+            os.remove("Rectangle.json")
+        except:
+            pass
         Rectangle.save_to_file([Rectangle(1, 2, id=1)])
         with open("Rectangle.json", "r") as file:
             self.assertEqual(file.read(), '[{"x": 0, "y": 0, "id": 1, "height": 2, "width": 1}]')
 
     def test_save_to_file(self):
-        os.remove("Rectangle.json")
+        try:
+            os.remove("Rectangle.json")
+        except:
+            pass
         self.assertEqual(Rectangle.load_from_file(), [])
 
 
