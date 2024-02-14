@@ -43,3 +43,10 @@ class TestBase(unittest.TestCase):
         square = Square(10, 2, 1, 1)
         self.assertEqual(
                 square.to_dictionary(), {'id': 1, 'x': 2, 'size': 10, 'y': 1})
+
+    def test_update(self):
+        square = Square(5)
+        square.update(size=7)
+        self.assertEqual(square.size, 7)
+
+    
