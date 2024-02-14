@@ -66,7 +66,7 @@ class Base:
             return []
 
     @staticmethod
-    def draw(list_rectangles, list_squares):
+    def draw(list_rectangles, list_squares, min_color=(0, 0, 0), max_color=(255, 255, 255)):
         """Draws all the Rectangles and Squares"""
         screen = turtle.Screen()
         screen.setup(width=800, height=600)
@@ -74,24 +74,33 @@ class Base:
         t = turtle.Turtle()
 
         for rect in list_rectangles:
+            color = "#{:02x}{:02x}{:02x}".format(
+            random.randint(min_color[0], max_color[0]),
+            random.randint(min_color[1], max_color[1]),
+            random.randint(min_color[2], max_color[2]))
+            t.color(color)
             t.penup()
             t.goto(rect.x, rect.y)
             t.pendown()
-            t.forward(rect.width)
-            t.left(90)
-            t.forward(rect.height)
-            t.left(90)
-            t.forward(rect.width)
-            t.left(90)
-            t.forward(rect.height)
-            t.left(90)
+            for _ in range(2):
+                t.forward(rect.width)
+                t.left(90)
+                t.forward(rect.height)
+                t.left(90)
 
         for square in list_squares:
+            color = "#{:02x}{:02x}{:02x}".format(
+            random.randint(min_color[0], max_color[0]),
+            random.randint(min_color[1], max_color[1]),
+            random.randint(min_color[2], max_color[2]))
+            t.color(color)
             t.penup()
             t.goto(square.x, square.y)
             t.pendown()
             for _ in range(4):
                 t.forward(square.width)
                 t.left(90)
+
+        # turtle.circle(80)
 
         screen.mainloop()
