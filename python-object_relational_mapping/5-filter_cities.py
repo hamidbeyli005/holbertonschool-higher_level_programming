@@ -8,7 +8,7 @@ all cities of that state, using the database hbtn_0e_4_usa
 if __name__ == "__main__":
     import MySQLdb
     import sys
-    
+
     if len(sys.argv) != 5:
         sys.exit('Use: 5-filter_cities.py <mysql username> <mysql password>'
                  ' <database name> <state name searched>')
