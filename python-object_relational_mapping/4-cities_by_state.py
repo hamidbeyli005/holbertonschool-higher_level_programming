@@ -15,8 +15,9 @@ if __name__ == "__main__":
                                     passwd=sys.argv[2],
                                     db=sys.argv[3])
     cursor = db_connection.cursor()
-    query = """SELECT *
+    query = """SELECT cities.id as id, cities.name, states.name
                 FROM cities
+                JOIN states ON cities.state_id = states.id
                 ORDER BY id"""
     cursor.execute(query)
 
