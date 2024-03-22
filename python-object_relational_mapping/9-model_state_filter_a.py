@@ -24,7 +24,7 @@ if __name__ == "__main__":
     session = Session()
 
     try:
-        for state in session.query(State).order_by(State.id):
+        for state in session.query(State).filter(State.name.contains("a")):
             print("{}: {}".format(state.id, state.name))
     except Exception:
         pass
