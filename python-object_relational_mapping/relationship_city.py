@@ -6,7 +6,6 @@
 
 from sqlalchemy import Column, Integer, String, ForeignKey
 from relationship_state import Base
-from sqlalchemy.orm import relationship
 
 
 class City(Base):
